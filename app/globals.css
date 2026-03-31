@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --color-background: #050811;
+  --color-card: #0f172a;
+  --color-admin: #7c3aed;
+  --color-student: #0fb5ae;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-slate-200 selection:bg-admin/30;
+  }
+}
+
+.glass {
+  @apply bg-card/50 backdrop-blur-xl border border-white/5;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.portal-card-admin {
+  @apply bg-gradient-to-br from-admin to-admin/60 hover:shadow-[0_0_40px_-10px_rgba(124,58,237,0.5)] transition-all duration-500;
+}
+
+.portal-card-student {
+  @apply bg-gradient-to-br from-student to-student/60 hover:shadow-[0_0_40px_-10px_rgba(15,181,174,0.5)] transition-all duration-500;
+}
+
+.input-field {
+  @apply bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 focus:border-admin/50 outline-none transition-all;
+}
+
+.btn-primary {
+  @apply bg-admin hover:bg-admin/90 text-white font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2;
+}
+
+.btn-student {
+  @apply bg-student hover:bg-student/90 text-white font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2;
+}
